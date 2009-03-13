@@ -1,0 +1,20 @@
+#
+#   Version 1.0
+# 	created 2008-01-17 by Tec
+#
+#
+#   1. prevent listing of folders
+Options  -Indexes
+#   2. Redirect client enquiries to search.php
+RewriteEngine on
+RewriteRule ^search\.html$ ./search.php
+#   3. Always start with this file
+DirectoryIndex search.php
+#   4. Prevent delivery of .htacess file 
+<FilesMatch "^.htaccess" >
+deny from all
+</FilesMatch>
+
+#
+#   End of file
+#
